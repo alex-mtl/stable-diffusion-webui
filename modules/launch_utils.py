@@ -109,13 +109,20 @@ def run(command, desc=None, errdesc=None, custom_env=None, live: bool = default_
     return (result.stdout or "")
 
 
+#def is_installed(package):
+#    try:
+#        spec = importlib.util.find_spec(package)
+#    except ModuleNotFoundError:
+#        return False
+#
+#    return spec is not None
+
 def is_installed(package):
     try:
-        spec = importlib.util.find_spec(package)
-    except ModuleNotFoundError:
+        import torch
+        return True
+    except ImportError:
         return False
-
-    return spec is not None
 
 
 def repo_dir(name):
