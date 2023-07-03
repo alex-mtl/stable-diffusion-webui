@@ -119,7 +119,7 @@ def run(command, desc=None, errdesc=None, custom_env=None, live: bool = default_
 
 def is_installed(package):
     try:
-        import torch
+        import package
         return True
     except ImportError:
         return False
