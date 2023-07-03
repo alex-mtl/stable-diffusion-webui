@@ -268,8 +268,8 @@ def prepare_environment():
     print(f"Version: {tag}")
     print(f"Commit hash: {commit}")
     print(f"args.reinstall_torch : {args.reinstall_torch}")
-    print(f"is_installed(torch) : {is_installed("torch")}")
-    print(f"is_installed(torchvision) : {is_installed("torchvision")}")
+    print(f"is_installed(torch) : "+is_installed("torch"))
+    print(f"is_installed(torchvision) : "+is_installed("torchvision"))
 
 
     if args.reinstall_torch or not is_installed("torch") or not is_installed("torchvision"):
