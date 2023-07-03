@@ -267,8 +267,13 @@ def prepare_environment():
     print(f"Python {sys.version}")
     print(f"Version: {tag}")
     print(f"Commit hash: {commit}")
+    print(f"args.reinstall_torch : {args.reinstall_torch}")
+    print(f"is_installed(torch) : {is_installed("torch")}")
+    print(f"is_installed(torchvision) : {is_installed("torchvision")}")
+
 
     if args.reinstall_torch or not is_installed("torch") or not is_installed("torchvision"):
+       # print(args.reinstall_torch, is_installed("torch") , is_installed("torchvision"))
         run(f'"{python}" -m {torch_command}', "Installing torch and torchvision ("+torch_command+")", "Couldn't install torch", live=True)
 
     if not args.skip_torch_cuda_test and not check_run_python("import torch; assert torch.cuda.is_available()"):
