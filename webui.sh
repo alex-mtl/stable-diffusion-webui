@@ -174,7 +174,7 @@ else
     printf "\n%s\n" "${delimiter}"
     printf "Clone stable-diffusion-webui"
     printf "\n%s\n" "${delimiter}"
-    "${GIT}" clone -b feature/improve-installation-speed git@github.com:alex-mtl/stable-diffusion-webui.git "${clone_dir}"
+    "${GIT}" clone -b feature/improve-installation-speed https://github.com/alex-mtl/stable-diffusion-webui.git "${clone_dir}"
     cd "${clone_dir}"/ || { printf "\e[1m\e[31mERROR: Can't cd to %s/%s/, aborting...\e[0m" "${install_dir}" "${clone_dir}"; exit 1; }
 fi
 
