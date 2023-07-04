@@ -267,9 +267,6 @@ def prepare_environment():
     print(f"Python {sys.version}")
     print(f"Version: {tag}")
     print(f"Commit hash: {commit}")
-    print(f"args.reinstall_torch : {args.reinstall_torch}")
-    print(f"is_installed(torch) : "+str(is_installed("torch")))
-    print(f"is_installed(torchvision) : "+str(is_installed("torchvision")))
 
 
     if args.reinstall_torch or not is_installed("torch") or not is_installed("torchvision"):
@@ -291,17 +288,17 @@ def prepare_environment():
    # if not is_installed("open_clip"):
    #     run_pip(f"install {openclip_package}", "open_clip")
 
-    if (not is_installed("xformers") or args.reinstall_xformers) and args.xformers:
-        run_pip(f"install -U -I --no-deps {xformers_package}", "xformers")
+    # if (not is_installed("xformers") or args.reinstall_xformers) and args.xformers:
+    #    run_pip(f"install -U -I --no-deps {xformers_package}", "xformers")
 
-    if not is_installed("ngrok") and args.ngrok:
-        run_pip("install ngrok", "ngrok")
+    #if not is_installed("ngrok") and args.ngrok:
+    #    run_pip("install ngrok", "ngrok")
 
     os.makedirs(os.path.join(script_path, dir_repos), exist_ok=True)
 
     git_clone(stable_diffusion_repo, repo_dir('stable-diffusion-stability-ai'), "Stable Diffusion", stable_diffusion_commit_hash)
     git_clone(k_diffusion_repo, repo_dir('k-diffusion'), "K-diffusion", k_diffusion_commit_hash)
-    git_clone(codeformer_repo, repo_dir('CodeFormer'), "CodeFormer", codeformer_commit_hash)
+    #git_clone(codeformer_repo, repo_dir('CodeFormer'), "CodeFormer", codeformer_commit_hash)
     git_clone(blip_repo, repo_dir('BLIP'), "BLIP", blip_commit_hash)
 
     if not is_installed("lpips"):
