@@ -7,7 +7,7 @@ clean-fid
 einops
 fastapi
 gfpgan
-gradio==3.23
+gradio
 httpcore
 inflection
 jsonmerge
